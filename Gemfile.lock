@@ -1,0 +1,12 @@
+GEM
+  specs:
+    agency-jekyll-theme (1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  agency-jekyll-theme
+
+BUNDLED WITH
+   1.16.0
