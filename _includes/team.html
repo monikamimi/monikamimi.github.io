@@ -3,34 +3,75 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Cennik</h2>
+                    <h3 class="section-subheading text-muted">Cennik wykonywanych usług.</h3>
                 </div>
             </div>
             <div class="row">
-                {% for member in site.people %}
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/{{ member.pic }}.jpg" class="img-responsive img-circle" alt="">
-                        <h4>{{ member.name }}</h4>
-                        <p class="text-muted">{{ member.position }}</p>
-                        <ul class="list-inline social-buttons">
-                            {% for network in member.social %}
-                            <li>
-                                <a href="{{ network.url }}">
-                                    <i class="fa fa-{{ network.title }}"></i>
-                                </a>
-                            </li>
-                            {% endfor %}
+                    
+                <div class="col-lg-8 col-lg-offset-3">
+                        <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>Rzęsy</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Metoda 1:1</td>
+                                    <td>XXX</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Metoda 2:1</td>
+                                    <td>XXX</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Metoda 3:1</td>
+                                    <td>XXX</td>
+                                  </tr>
+                                </tbody>
 
-                        </ul>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                                <thead>
+                                        <tr>
+                                          <th>Paznokcie</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>YYY</td>
+                                          <td>XXX</td>
+                                        </tr>
+                                        <tr>
+                                          <td>YYY</td>
+                                          <td>XXX</td>
+                                        </tr>
+                                        <tr>
+                                          <td>YYY</td>
+                                          <td>XXX</td>
+                                        </tr>
+                                      </tbody>
+
+                                      <thead>
+                                            <tr>
+                                              <th>Piercing</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>YYY</td>
+                                              <td>XXX</td>
+                                            </tr>
+                                            <tr>
+                                              <td>YYY</td>
+                                              <td>XXX</td>
+                                            </tr>
+                                            <tr>
+                                              <td>YYY</td>
+                                              <td>XXX</td>
+                                            </tr>
+                                          </tbody>
+                              </table>
+
                 </div>
             </div>
         </div>
