@@ -22,3 +22,9 @@ layout: style
     color: #d6d2d2;
     font-size: 19px;
 }
+
+.portfolio-image{
+    display: initial;
+    margin: 10px;
+    max-height: 500px;
+}
