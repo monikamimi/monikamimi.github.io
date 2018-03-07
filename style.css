@@ -23,8 +23,15 @@ layout: style
     font-size: 19px;
 }
 
+.portfolio-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .portfolio-image{
     display: initial;
     margin: 10px;
     max-height: 500px;
+    border: 8px solid black;
 }
