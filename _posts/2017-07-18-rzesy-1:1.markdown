@@ -4,17 +4,16 @@ subtitle: Metoda 1:1
 layout: default
 modal-id: 1
 images: 
-    - metoda-1:1/1.png
-    - metoda-1:1/2.png
+    - metoda-1:1/gifA.gif
     - metoda-1:1/3.png
     - metoda-1:1/4.png
-    - metoda-1:1/5.png
-    - metoda-1:1/7.png
     - metoda-1:1/8.png
+    - metoda-1:1/1.png
+    - metoda-1:1/2.png
     - metoda-1:1/a.png
+    - metoda-1:1/7.png
     - metoda-1:1/b.png
     - metoda-1:1/9.gif
-    - metoda-1:1/gifA.gif
 thumbnail: rzesy-1:1.gif
-alt: metoda 1:1
+alt: meto da 1:1
 ---

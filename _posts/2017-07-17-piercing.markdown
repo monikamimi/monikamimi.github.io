@@ -1,0 +1,13 @@
+---
+title: Piercing
+subtitle:
+layout: default
+modal-id: 3
+images: 
+    - piercing/1.jpg
+    - piercing/2.jpg
+    - piercing/3.jpg
+    - piercing/4.jpg
+thumbnail: piercing.gif
+alt: metoda 2:1
+---

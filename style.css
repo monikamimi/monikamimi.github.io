@@ -32,6 +32,6 @@ layout: style
 .portfolio-image{
     display: initial;
     margin: 10px;
-    max-height: 500px;
-    border: 8px solid black;
+    max-height: 300px;
+    border: 10px solid black;
 }
