@@ -8,17 +8,18 @@
                 </div>
             </div>
         </div>
-            <h2>{{ post.title }} - {{post.subtitle}}</h2>
-            <hr class="star-primary">
-            <div class="portfolio-container">
-                {% for image in post.images %}
-                <img src="img/loading_spinner.gif" data-src=img/portfolio/{{ image }} class="img-responsive portfolio-image" alt="{{ post.alt }}"> 
-                {% endfor %}
-            </div>
-            </div>
-            <p>{{ post.description }}</p>
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-                <i class="fa fa-times"></i> Close</button>
+        <h2>{{ post.title }} - {{post.subtitle}}</h2>
+        <hr class="star-primary">
+        <div class="portfolio-container">
+            {% for image in post.images %}
+            <a class="lightbox-item" href="img/portfolio/{{ image }}" data-lightbox="image-{{post.title}}-{{post.subtitle}}" data-alt="img/loading_spinner.gif">
+                <div class=thumbnail style="background-image: url(img/portfolio/{{ image }});"></div>
+            </a>
+            {% endfor %}
         </div>
+        <!-- <p>{{ post.description }}</p> -->
+        <button type="button" style="float: right;margin: 20px" class="btn btn-default" data-dismiss="modal">
+            <i class="fa fa-times"></i> Close</button>
+    </div>
 </div>
 {% endfor %}
