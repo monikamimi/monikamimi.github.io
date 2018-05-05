@@ -35,3 +35,7 @@ layout: style
     max-height: 300px;
     border: 10px solid black;
 }
+
+.table th{
+    font-size: 130%
+}
