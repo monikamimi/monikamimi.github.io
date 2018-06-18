@@ -1,29 +1,48 @@
- <!-- jQuery Version 1.11.0 -->
-    <script src="{{ "/js/jquery-1.11.0.js" | prepend: site.baseurl }}"></script>
+<!-- jQuery Version 3.3.1 -->
+<script src="{{ " /js/jquery-3.3.1.min.js " | prepend: site.baseurl }}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+<!-- Fancybox -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
-    <!-- Plugin JavaScript -->
-    <script src="{{ "/js/jquery.easing.min.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/classie.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/cbpAnimatedHeader.js" | prepend: site.baseurl }}"></script>
+<!-- <link rel="stylesheet" href="{{ " /css/justifiedGallery.min.css " | prepend: site.baseurl }}" />
+<script src="{{ " /js/jquery.justifiedGallery.min.js " | prepend: site.baseurl }}"></script> -->
 
-    <!-- Contact Form JavaScript -->
-    <script src="{{ "/js/jqBootstrapValidation.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/contact_me.js" | prepend: site.baseurl }}"></script>
+<!-- isotope -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{{ "/js/agency.js" | prepend: site.baseurl }}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ " /js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
-    <script>
-            window.addEventListener('load', function(){
-                var allimages= document.getElementsByTagName('img');
-                for (var i=0; i<allimages.length; i++) {
-                    if (allimages[i].getAttribute('data-src')) {
-                        allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
-                    }
-                }
-            }, false)
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="{{ " /js/jquery.easing.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/classie.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/cbpAnimatedHeader.js " | prepend: site.baseurl }}"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="{{ " /js/jqBootstrapValidation.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/contact_me.js " | prepend: site.baseurl }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ " /js/agency.js " | prepend: site.baseurl }}"></script>
+
+<script>
+    window.addEventListener('load', function () {
+        var allimages = document.getElementsByTagName('img');
+        for (var i = 0; i < allimages.length; i++) {
+            if (allimages[i].getAttribute('data-src')) {
+                allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+            }
+        }
+
+        $('.grid').isotope({
+            itemSelector: '.grid-item',
+            layoutMode: 'masonry',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
+    }, false)
+</script>
