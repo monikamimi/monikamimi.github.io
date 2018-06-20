@@ -4,27 +4,27 @@ layout: default
 modal-id: 1
 images: 
     - all/IMG_4029.jpg,grid-item--width2
-    - all/IMG_4047.jpg
     - all/IMG_4041.jpg,grid-item--width2
-    - all/IMG_4281.jpg
     - all/IMG_4037.jpg,grid-item--width2
-    - all/IMG_4306.jpg
-    - all/IMG_4266.jpg,grid-item--width2
-    - all/IMG_4314.jpg
-    - all/IMG_4030.jpg,grid-item--width2
-    - all/IMG_4321.jpg
     - all/IMG_4031.jpg,grid-item--width2
-    - all/IMG_4322.jpg
+    - all/IMG_4266.jpg,grid-item--width2
+    - all/IMG_4030.jpg,grid-item--width2
     - all/IMG_4309.jpg,grid-item--width2
-    - all/IMG_4378.jpg
     - all/IMG_4317-2.jpg,grid-item--width2
-    - all/IMG_4396.jpg
     - all/IMG_4368.jpg,grid-item--width2
-    - all/IMG_4400.jpg
     - all/IMG_4335.jpg,grid-item--width2
     - all/IMG_4370.jpg,grid-item--width2
-    - all/IMG_4452.jpg
     - all/IMG_4375.jpg,grid-item--width2
+    - all/IMG_4321.jpg
+    - all/IMG_4281.jpg
+    - all/IMG_4306.jpg
+    - all/IMG_4314.jpg
+    - all/IMG_4047.jpg
+    - all/IMG_4322.jpg
+    - all/IMG_4378.jpg
+    - all/IMG_4396.jpg
+    - all/IMG_4400.jpg
+    - all/IMG_4452.jpg
 
 
 
