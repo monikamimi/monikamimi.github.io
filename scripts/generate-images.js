@@ -10,7 +10,7 @@ dirs.forEach(dir => {
     mkdirp.sync(dir.thumb);
     files.forEach(file => {
       sharp(path.join(dir.src, file))
-      .resize(462, 250)
+      .resize(466, 300)
       .max()
       .toFile(path.join(dir.thumb, file))
     });

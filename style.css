@@ -55,7 +55,7 @@ layout: style
 
 .grid-item{
   width: 20%;
-  padding: 3px
+  padding: 1px
 }
 
 .grid-item--width2 { width: 40%; }

@@ -12,11 +12,8 @@
 
             <div class="grid">
                 <div class="grid-sizer"></div>
-                {% for post in site.posts %} {% for imageObj in post.images %}
-                {% assign image = imageObj | split: ',' %}
-                <!-- <a class="lightbox-item" href="img/portfolio/{{ image }}" data-lightbox="image-{{post.title}}-{{post.subtitle}}" data-alt="img/loading_spinner.gif">
-                        <div class=thumbnail style="background-image: url(img/portfolio/{{ image }});"></div>
-                    </a> -->
+                {% for post in site.posts %} {% for imageObj in post.images %} {% assign image = imageObj | split: ',' %}
+
                 <div class="grid-item {{ image[1] }}">
                     <div class="img-wrapper" data-fancybox="gallery" href="img/portfolio/optimized/{{ image[0] }}" data-alt="img/loading_spinner.gif">
                         <img src="img/portfolio/thumbnails/{{ image[0] }}">
@@ -24,6 +21,8 @@
                 </div>
                 {% endfor %} {% endfor %}
             </div>
+
+
             <!-- {% for post in site.posts %}
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">

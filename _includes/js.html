@@ -5,9 +5,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
-<!-- <link rel="stylesheet" href="{{ " /css/justifiedGallery.min.css " | prepend: site.baseurl }}" />
-<script src="{{ " /js/jquery.justifiedGallery.min.js " | prepend: site.baseurl }}"></script> -->
-
 <!-- isotope -->
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
@@ -41,7 +38,8 @@
             layoutMode: 'masonry',
             percentPosition: true,
             masonry: {
-                columnWidth: '.grid-sizer'
+                columnWidth: '.grid-sizer',
+                // gutter: 1
             }
         });
     }, false)
