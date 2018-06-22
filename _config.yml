@@ -2,7 +2,7 @@ url: https://monikamimi.github.io
 baseurl: 
 host: 0.0.0.0
 port: 4000
-exclude: [img/portfolio/all]
+# exclude: [_raw_img]
 
 # Site settings
 title: Urocza ja

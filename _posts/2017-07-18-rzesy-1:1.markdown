@@ -3,7 +3,6 @@ title: Rzęsy
 layout: default
 modal-id: 1
 images: 
-//glob?
     - all/IMG_4029.jpg,grid-item--width2
     - all/IMG_4041.jpg,grid-item--width2
     - all/IMG_4037.jpg,grid-item--width2

@@ -7,19 +7,15 @@ var watermark = require('image-watermark');
 
 const DIRS = [
   {
-    src: "../img/portfolio/all",
-    narrowThumb: "../img/portfolio/thumbnails/narrow/all",
-    wideThumb: "../img/portfolio/thumbnails//wide/all",
-    optimized: "../img/portfolio/optimized/all"
+    src: "../_raw_img/portfolio/all",
+    dest: "../img/portfolio/all"
   }
 ];
-const ASPECT_RATIO = 16 / 10;
+const ASPECT_RATIO = 16 / 9;
 const GENERATE_WATERMARKS = true;
 
 DIRS.forEach(dir => {
-  mkdirp.sync(dir.wideThumb);
-  mkdirp.sync(dir.narrowThumb);
-
+  let { narrowThumbDir, wideThumbDir } = prepareThumbnailsDirs(dir.dest);
   fs.readdir(dir.src, (err, files) => {
     files.forEach(file => {
       let srcPath = path.join(dir.src, file);
@@ -32,10 +28,10 @@ DIRS.forEach(dir => {
           : { width: null, height: 240 };
 
       let destPath =
-        aspectSize > ASPECT_RATIO ? dir.wideThumb : dir.narrowThumb;
+        aspectSize > ASPECT_RATIO ? wideThumbDir : narrowThumbDir;
       let destFullPath = path.join(destPath, file);
 
-      console.log(`Generating thumbnail in ${destFullPath}`);
+      console.log(`Generating thumbnails`);
       sharp(srcPath)
         .resize(resizeParam.width, resizeParam.height)
         .max()
@@ -45,12 +41,19 @@ DIRS.forEach(dir => {
 });
 
 DIRS.forEach(dir => {
-  mkdirp.sync(dir.optimized);
+  let { narrowOptimizedDir, wideOptimizedDir } = prepareOptimizedDirs(dir.dest);
 
   fs.readdir(dir.src, (err, files) => {
     files.forEach(file => {
-      let destFullPath = path.join(dir.optimized, file);
-      console.log(`Generating optimized image in ${destFullPath}`);
+      let srcPath = path.join(dir.src, file);
+      let dimensions = sizeOf(srcPath);
+      let aspectSize = dimensions.width / dimensions.height;
+
+      let destPath =
+        aspectSize > ASPECT_RATIO ? wideOptimizedDir : narrowOptimizedDir;
+      let destFullPath = path.join(destPath, file);
+
+      console.log(`Generating optimized image in`);
       sharp(path.join(dir.src, file))
         .resize(1900, 1080)
         .max()
@@ -58,6 +61,22 @@ DIRS.forEach(dir => {
     });
   });
 });
+
+function prepareThumbnailsDirs(destDir) {
+  let narrowThumbDir = path.join(destDir, "thumbnails/narrow/");
+  let wideThumbDir = path.join(destDir, "thumbnails/wide/");
+  mkdirp.sync(narrowThumbDir);
+  mkdirp.sync(wideThumbDir);
+  return { narrowThumbDir, wideThumbDir };
+}
+
+function prepareOptimizedDirs(destDir) {
+  let narrowOptimizedDir = path.join(destDir, "optimized/narrow/");
+  let wideOptimizedDir = path.join(destDir, "optimized/wide/");
+  mkdirp.sync(narrowOptimizedDir);
+  mkdirp.sync(wideOptimizedDir);
+  return { narrowOptimizedDir, wideOptimizedDir };
+}
 
 function embedWatermark(path) {
   if (GENERATE_WATERMARKS) {
