@@ -9,6 +9,11 @@ title: Urocza ja
 email: uroczaja@o2.pl
 description: "Stylistyka i piercing"
 
+uncss:
+  stylesheets:            # a list of stylesheets to be processed; mandatory
+    # - style.css
+    - css/bootstrap.min.css
+    - css/agency.css
 
 # Team names, titles and social links
 people:
