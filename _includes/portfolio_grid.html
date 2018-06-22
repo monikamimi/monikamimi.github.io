@@ -9,42 +9,28 @@
         </div>
         <div class="row">
             <!-- Portfolio Modals -->
-
             <div class="grid">
                 <div class="grid-sizer"></div>
-                {% for post in site.posts %} {% for imageObj in post.images %} {% assign image = imageObj | split: ',' %}
-                
-                {% for image in site.static_files %}
-                    {% if image.path contains 'img/portfolio/all/wide' %}
-                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                    {% endif %}
-                {% endfor %}
-                <div class="grid-item {{ image[1] }}">
-                    <div class="img-wrapper" data-fancybox="gallery" href="img/portfolio/optimized/{{ image[0] }}" data-alt="img/loading_spinner.gif">
-                        <img src="img/portfolio/thumbnails/{{ image[0] }}">
-                    </div>
-                </div>
-                {% endfor %} {% endfor %}
-            </div>
-            
-
-
-            <!-- {% for post in site.posts %}
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+                {% for image in site.static_files %} 
+                    {% if image.path contains 'img/portfolio/all/wide/optimized' %}
+                    <div class="grid-item grid-item--width2">
+                        <div class="img-wrapper" data-fancybox="gallery" href="{{image.path}}" data-alt="img/loading_spinner.gif">
+                            <img src="{{image.path | replace 'optimized', 'thumbnails'}}">
                         </div>
-                        <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>{{ post.title }}</h4>
-                        <p class="text-muted">{{ post.subtitle }}</p>
                     </div>
-                </div>
-            {% endfor %} -->
+                    {% endif %} 
+                {% endfor %}
+
+                {% for image in site.static_files %} 
+                    {% if image.path contains 'img/portfolio/all/narrow/optimized' %}
+                    <div class="grid-item">
+                        <div class="img-wrapper" data-fancybox="gallery" href="{{image.path}}" data-alt="img/loading_spinner.gif">
+                            <img src="{{image.path | replace 'optimized', 'thumbnails'}}">
+                        </div>
+                    </div>
+                    {% endif %} 
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
