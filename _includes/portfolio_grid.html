@@ -13,7 +13,12 @@
             <div class="grid">
                 <div class="grid-sizer"></div>
                 {% for post in site.posts %} {% for imageObj in post.images %} {% assign image = imageObj | split: ',' %}
-
+                
+                {% for image in site.static_files %}
+                    {% if image.path contains 'img/portfolio/all/wide' %}
+                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                    {% endif %}
+                {% endfor %}
                 <div class="grid-item {{ image[1] }}">
                     <div class="img-wrapper" data-fancybox="gallery" href="img/portfolio/optimized/{{ image[0] }}" data-alt="img/loading_spinner.gif">
                         <img src="img/portfolio/thumbnails/{{ image[0] }}">
@@ -22,11 +27,6 @@
                 {% endfor %} {% endfor %}
             </div>
             
-            <!-- {% for image in site.static_files %}
-                {% if image.path contains 'images/slider' %}
-                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                {% endif %}
-            {% endfor %} -->
 
 
             <!-- {% for post in site.posts %}

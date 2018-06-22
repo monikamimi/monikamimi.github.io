@@ -63,16 +63,16 @@ DIRS.forEach(dir => {
 });
 
 function prepareThumbnailsDirs(destDir) {
-  let narrowThumbDir = path.join(destDir, "thumbnails/narrow/");
-  let wideThumbDir = path.join(destDir, "thumbnails/wide/");
+  let narrowThumbDir = path.join(destDir, "narrow/thumbnails/");
+  let wideThumbDir = path.join(destDir, "wide/thumbnails/");
   mkdirp.sync(narrowThumbDir);
   mkdirp.sync(wideThumbDir);
   return { narrowThumbDir, wideThumbDir };
 }
 
 function prepareOptimizedDirs(destDir) {
-  let narrowOptimizedDir = path.join(destDir, "optimized/narrow/");
-  let wideOptimizedDir = path.join(destDir, "optimized/wide/");
+  let narrowOptimizedDir = path.join(destDir, "narrow/optimized/");
+  let wideOptimizedDir = path.join(destDir, "wide/optimized/");
   mkdirp.sync(narrowOptimizedDir);
   mkdirp.sync(wideOptimizedDir);
   return { narrowOptimizedDir, wideOptimizedDir };
