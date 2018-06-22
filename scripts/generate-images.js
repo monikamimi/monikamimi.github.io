@@ -3,6 +3,7 @@ const path = require("path");
 const mkdirp = require("mkdirp");
 var sizeOf = require("image-size");
 const sharp = require("sharp");
+var watermark = require('image-watermark');
 
 const DIRS = [
   {
@@ -13,8 +14,7 @@ const DIRS = [
   }
 ];
 const ASPECT_RATIO = 16 / 10;
-
-
+const GENERATE_WATERMARKS = true;
 
 DIRS.forEach(dir => {
   mkdirp.sync(dir.wideThumb);
@@ -39,7 +39,7 @@ DIRS.forEach(dir => {
       sharp(srcPath)
         .resize(resizeParam.width, resizeParam.height)
         .max()
-        .toFile(destFullPath);
+        .toFile(destFullPath, () => embedWatermark(destFullPath));
     });
   });
 });
@@ -54,7 +54,16 @@ DIRS.forEach(dir => {
       sharp(path.join(dir.src, file))
         .resize(1900, 1080)
         .max()
-        .toFile(destFullPath);
+        .toFile(destFullPath, () => embedWatermark(destFullPath));
     });
   });
 });
+
+function embedWatermark(path) {
+  if (GENERATE_WATERMARKS) {
+    watermark.embedWatermark(path, {
+      'text': 'www.uroczaja.pl',
+      'override-image': true,
+    });
+  }
+}
