@@ -1,31 +1,60 @@
 const fs = require("fs");
 const path = require("path");
 const mkdirp = require("mkdirp");
+var sizeOf = require("image-size");
 const sharp = require("sharp");
 
-const dirs = [{src: "../img/portfolio/all", thumb: "../img/portfolio/thumbnails/all", optimized: "../img/portfolio/optimized/all"}];
+const DIRS = [
+  {
+    src: "../img/portfolio/all",
+    narrowThumb: "../img/portfolio/thumbnails/narrow/all",
+    wideThumb: "../img/portfolio/thumbnails//wide/all",
+    optimized: "../img/portfolio/optimized/all"
+  }
+];
+const ASPECT_RATIO = 16 / 10;
 
-dirs.forEach(dir => {
+
+
+DIRS.forEach(dir => {
+  mkdirp.sync(dir.wideThumb);
+  mkdirp.sync(dir.narrowThumb);
+
   fs.readdir(dir.src, (err, files) => {
-    mkdirp.sync(dir.thumb);
     files.forEach(file => {
-      sharp(path.join(dir.src, file))
-      .resize(466, 300)
-      .max()
-      .toFile(path.join(dir.thumb, file))
+      let srcPath = path.join(dir.src, file);
+      let dimensions = sizeOf(srcPath);
+      let aspectSize = dimensions.width / dimensions.height;
+
+      let resizeParam =
+        aspectSize > ASPECT_RATIO
+          ? { width: 466, height: null }
+          : { width: null, height: 240 };
+
+      let destPath =
+        aspectSize > ASPECT_RATIO ? dir.wideThumb : dir.narrowThumb;
+      let destFullPath = path.join(destPath, file);
+
+      console.log(`Generating thumbnail in ${destFullPath}`);
+      sharp(srcPath)
+        .resize(resizeParam.width, resizeParam.height)
+        .max()
+        .toFile(destFullPath);
     });
-  })
+  });
 });
 
+DIRS.forEach(dir => {
+  mkdirp.sync(dir.optimized);
 
-dirs.forEach(dir => {
   fs.readdir(dir.src, (err, files) => {
-    mkdirp.sync(dir.optimized);
     files.forEach(file => {
+      let destFullPath = path.join(dir.optimized, file);
+      console.log(`Generating optimized image in ${destFullPath}`);
       sharp(path.join(dir.src, file))
-      .resize(1900, 1080)
-      .max()
-      .toFile(path.join(dir.optimized, file))
+        .resize(1900, 1080)
+        .max()
+        .toFile(destFullPath);
     });
-  })
+  });
 });
