@@ -6,6 +6,11 @@ layout: style
   color: #fed136 !important;
   font-family: "Kaushan Script";
 }
+
+header .intro-text .intro-lead-in {
+  font-family: "Lato", "Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+
 .main-button {
   color: #fed136;
   background-color: #1f1f1f;

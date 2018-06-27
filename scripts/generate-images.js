@@ -25,7 +25,7 @@ DIRS.forEach(dir => {
       let resizeParam =
         aspectSize > ASPECT_RATIO
           ? { width: 466, height: null }
-          : { width: null, height: 240 };
+          : { width: 232, height: null };
 
       let destPath =
         aspectSize > ASPECT_RATIO ? wideThumbDir : narrowThumbDir;
