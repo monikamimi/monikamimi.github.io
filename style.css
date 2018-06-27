@@ -6,6 +6,11 @@ layout: style
   color: #fed136 !important;
   font-family: "Kaushan Script";
 }
+
+header .intro-text .intro-lead-in {
+  font-family: "Lato", "Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+
 .main-button {
   color: #fed136;
   background-color: #1f1f1f;
@@ -47,4 +52,26 @@ layout: style
 .lightbox-item{
   width: 300px;
   height: 300px;
+}
+
+.grid-sizer {
+  width: 20%;
+}
+
+.grid-item{
+  width: 20%;
+  padding: 1px
+}
+
+.grid-item--width2 { width: 40%; }
+
+.img-wrapper img{
+  max-height: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.grid{
+  width: 100%;
+  margin: 0 auto;
 }
