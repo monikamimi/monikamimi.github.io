@@ -9,6 +9,10 @@ const DIRS = [
   {
     src: "../_raw_img/portfolio/all",
     dest: "../img/portfolio/all"
+  },
+  {
+    src: "./temp",
+    dest: "./temp_dest"
   }
 ];
 const ASPECT_RATIO = 16 / 9;
