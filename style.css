@@ -2,13 +2,9 @@
 layout: style
 ---
 
-.main-header {
-  color: #fed136 !important;
-  font-family: "Kaushan Script";
-}
+header {
+  color: #640E23 !important;
 
-header .intro-text .intro-lead-in {
-  font-family: "Lato", "Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .main-button {
@@ -74,4 +70,18 @@ header .intro-text .intro-lead-in {
 .grid{
   width: 100%;
   margin: 0 auto;
+}
+
+.navbar-default .nav li a {
+  color: black;
+}
+
+.intro-heading {
+  margin-bottom: 10px !important;
+  font-family: "Tenor Sans" !important;
+}
+
+.intro-lead-in {
+  font-size: 35px;
+  font-family: "Montserrat" !important;
 }
