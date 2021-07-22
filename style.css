@@ -4,7 +4,6 @@ layout: style
 
 header {
   color: #640E23 !important;
-
 }
 
 .main-button {
@@ -84,4 +83,25 @@ header {
 .intro-lead-in {
   font-size: 35px;
   font-family: "Montserrat" !important;
+}
+
+.navbar-shrink .nav li a{
+  color: #f7f7f7 !important;
+}
+
+.bg-main {
+  background-color: #ffedd2 !important;
+}
+
+.bg-secondary {
+  background-color: #f5f5f680 !important;
+}
+
+#contact {
+  margin: 0;
+  padding: 30px 0;
+}
+
+h2 {
+  font-family: "Tenor Sans" !important;
 }

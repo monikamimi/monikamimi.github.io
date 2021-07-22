@@ -11,20 +11,28 @@
                 </button>
             </div>
 
+
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-left">
+                    {% for network in site.social %}
+                    <li><a target="_blank" href="{{ network.url }}"><i class="fab fa-{{ network.title }} fa-lg"></i></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">O Mnie</a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="#services">Usługi</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <!-- <li>
-                        <a class="page-scroll" href="#about">O Mnie</a>
-                    </li> -->
-                    <li>
-                        <a class="page-scroll" href="#team">Cennik</a>
+                        <a class="page-scroll" href="#price">Cennik</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Kontakt</a>
