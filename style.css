@@ -6,6 +6,10 @@ header {
   color: #640E23 !important;
 }
 
+.main-color {
+  color: #640E23 !important;
+}
+
 .main-button {
   color: #fed136;
   background-color: #1f1f1f;
@@ -81,7 +85,7 @@ header {
 }
 
 .intro-lead-in {
-  font-size: 35px;
+  font-size: 35px !important;
   font-family: "Montserrat" !important;
 }
 
@@ -104,4 +108,12 @@ header {
 
 h2 {
   font-family: "Tenor Sans" !important;
+}
+
+.main-list li{
+  font-size: 20px;
+}
+
+.hr-second-color{
+  border-color: #640e2366;
 }
