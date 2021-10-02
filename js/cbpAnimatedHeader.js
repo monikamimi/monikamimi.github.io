@@ -8,49 +8,51 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-var cbpAnimatedHeader = (function () {
-  var docElem = document.documentElement,
-    header = document.querySelector(".navbar-fixed-top"),
-    didScroll = false,
-    changeHeaderOn = 100;
+ var cbpAnimatedHeader = (function () {
+	var docElem = document.documentElement,
+	  header = document.querySelector(".navbar-fixed-top"),
+	  didScroll = false,
+	  changeHeaderOn = 100;
+	  const minWidth = 768;
 
-  function init() {
-    if (window.innerWidth < 450) {
-      classie.add(header, "navbar-shrink");
-    }
-
-    window.addEventListener("resize", function (event) {
-      if (event.target.innerWidth < 450) {
-        classie.add(header, "navbar-shrink");
-      }
-    });
-
-    window.addEventListener(
-      "scroll",
-      function (event) {
-        if (!didScroll) {
-          didScroll = true;
-          setTimeout(scrollPage, 250);
-        }
-      },
-      false
-    );
-  }
-
-  function scrollPage() {
-    var sy = scrollY();
-
-    if (sy >= changeHeaderOn) {
-      classie.add(header, "navbar-shrink");
-    } else {
-      classie.remove(header, "navbar-shrink");
-    }
-    didScroll = false;
-  }
-
-  function scrollY() {
-    return window.pageYOffset || docElem.scrollTop;
-  }
-
-  init();
-})();
+	function init() {
+	  if (window.innerWidth < minWidth) {
+		classie.add(header, "navbar-shrink");
+	  }
+  
+	  window.addEventListener("resize", function (event) {
+		if (event.target.innerWidth < minWidth) {
+		  classie.add(header, "navbar-shrink");
+		}
+	  });
+  
+	  window.addEventListener(
+		"scroll",
+		function (event) {
+		  if (!didScroll) {
+			didScroll = true;
+			setTimeout(scrollPage, 250);
+		  }
+		},
+		false
+	  );
+	}
+  
+	function scrollPage() {
+	  var sy = scrollY();
+  
+	  if (sy >= changeHeaderOn) {
+		classie.add(header, "navbar-shrink");
+	  } else if(window.innerWidth > minWidth){
+		classie.remove(header, "navbar-shrink");
+	  }
+	  didScroll = false;
+	}
+  
+	function scrollY() {
+	  return window.pageYOffset || docElem.scrollTop;
+	}
+  
+	init();
+  })();
+  
