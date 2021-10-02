@@ -81,10 +81,10 @@ header {
 
 .sub-title {
   font-family: "Tenor Sans" !important;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 65px;
+  font-size: 15px !important;
+  font-weight: 600 !important;
   color: black;
+  text-transform: none !important;
 }
 
 .intro-heading {
