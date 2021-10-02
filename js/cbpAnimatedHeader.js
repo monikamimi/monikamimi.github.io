@@ -4,41 +4,53 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-var cbpAnimatedHeader = (function() {
+var cbpAnimatedHeader = (function () {
+  var docElem = document.documentElement,
+    header = document.querySelector(".navbar-fixed-top"),
+    didScroll = false,
+    changeHeaderOn = 100;
 
-	var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-fixed-top' ),
-		didScroll = false,
-		changeHeaderOn = 100;
+  function init() {
+    if (window.innerWidth < 450) {
+      classie.add(header, "navbar-shrink");
+    }
 
-	function init() {
-		window.addEventListener( 'scroll', function( event ) {
-			if( !didScroll ) {
-				didScroll = true;
-				setTimeout( scrollPage, 250 );
-			}
-		}, false );
-	}
+    window.addEventListener("resize", function (event) {
+      if (event.target.innerWidth < 450) {
+        classie.add(header, "navbar-shrink");
+      }
+    });
 
-	function scrollPage() {
-		var sy = scrollY();
-		if ( sy >= changeHeaderOn ) {
-			classie.add( header, 'navbar-shrink' );
-		}
-		else {
-			classie.remove( header, 'navbar-shrink' );
-		}
-		didScroll = false;
-	}
+    window.addEventListener(
+      "scroll",
+      function (event) {
+        if (!didScroll) {
+          didScroll = true;
+          setTimeout(scrollPage, 250);
+        }
+      },
+      false
+    );
+  }
 
-	function scrollY() {
-		return window.pageYOffset || docElem.scrollTop;
-	}
+  function scrollPage() {
+    var sy = scrollY();
 
-	init();
+    if (sy >= changeHeaderOn) {
+      classie.add(header, "navbar-shrink");
+    } else {
+      classie.remove(header, "navbar-shrink");
+    }
+    didScroll = false;
+  }
 
+  function scrollY() {
+    return window.pageYOffset || docElem.scrollTop;
+  }
+
+  init();
 })();

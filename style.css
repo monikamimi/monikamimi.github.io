@@ -3,11 +3,11 @@ layout: style
 ---
 
 header {
-  color: #640E23 !important;
+  color: #640e23 !important;
 }
 
 .main-color {
-  color: #640E23 !important;
+  color: #640e23 !important;
 }
 
 .main-button {
@@ -48,7 +48,7 @@ header {
 .table th {
   font-size: 130%;
 }
-.lightbox-item{
+.lightbox-item {
   width: 300px;
   height: 300px;
 }
@@ -57,20 +57,22 @@ header {
   width: 20%;
 }
 
-.grid-item{
+.grid-item {
   width: 20%;
-  padding: 1px
+  padding: 1px;
 }
 
-.grid-item--width2 { width: 40%; }
+.grid-item--width2 {
+  width: 40%;
+}
 
-.img-wrapper img{
+.img-wrapper img {
   max-height: 100%;
   max-width: 100%;
   cursor: pointer;
 }
 
-.grid{
+.grid {
   width: 100%;
   margin: 0 auto;
 }
@@ -97,7 +99,7 @@ header {
   font-family: "Montserrat" !important;
 }
 
-.navbar-shrink .nav li a{
+.navbar-shrink .nav li a {
   color: #f7f7f7 !important;
 }
 
@@ -118,10 +120,16 @@ h2 {
   font-family: "Tenor Sans" !important;
 }
 
-.main-list li{
+.main-list li {
   font-size: 20px;
 }
 
-.hr-second-color{
+.hr-second-color {
   border-color: #640e2366;
+}
+
+@media only screen and (max-width: 430px) {
+  .price-table {
+    font-size: 12px;
+  } 
 }
