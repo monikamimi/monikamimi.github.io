@@ -95,6 +95,7 @@ header {
 }
 
 .intro-lead-in {
+  line-height: 30px;
   font-size: 35px !important;
   font-family: "Montserrat" !important;
 }
