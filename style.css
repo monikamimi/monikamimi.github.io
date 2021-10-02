@@ -79,6 +79,14 @@ header {
   color: black;
 }
 
+.sub-title {
+  font-family: "Tenor Sans" !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 65px;
+  color: black;
+}
+
 .intro-heading {
   margin-bottom: 10px !important;
   font-family: "Tenor Sans" !important;
