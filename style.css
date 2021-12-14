@@ -104,6 +104,10 @@ header {
   color: #f7f7f7 !important;
 }
 
+.navbar-shrink .nav li div div {
+  color: #f7f7f7 !important;
+}
+
 .bg-main {
   background-color: #ffedd2 !important;
 }
@@ -133,4 +137,28 @@ h2 {
   .price-table {
     font-size: 12px;
   } 
+}
+
+.booksy-widget-button {
+  background: none !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 200px !important;
+  height: 70px !important;
+}
+
+.booksy-widget-button:hover{
+  width: 200px !important;
+  height: 70px !important;
+}
+
+.booksy-widget-button:before {
+  margin-top: 50px;
+  content: "Rezerwuj wizytę";
+  color: #fff;
+  background-color: #640E23;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 19.5px;
 }
